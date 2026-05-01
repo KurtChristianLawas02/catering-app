@@ -1,0 +1,125 @@
+/* ============================================
+   PACKAGES SECTION STYLES
+   ============================================ */
+
+#packages {
+  padding: 7rem 4rem;
+  background: var(--warm);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.pkg-card {
+  background: var(--cream);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pkg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.pkg-badge {
+  position: absolute;
+  top: -1px;
+  right: 2rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+}
+
+.pkg-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.pkg-price {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pkg-features {
+  list-style: none;
+}
+
+.pkg-features li {
+  font-size: 0.88rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pkg-features li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+/* Expandable Package Styles */
+.pkg-expandable li.hidden-item {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.pkg-expandable.expanded li.hidden-item {
+  display: flex;
+  max-height: 100px;
+  opacity: 1;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pkg-toggle {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pkg-toggle:hover {
+  background: var(--accent);
+  transform: scale(1.02);
+}

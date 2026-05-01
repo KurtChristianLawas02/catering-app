@@ -1,0 +1,51 @@
+/* ============================================
+   SERVICES SECTION STYLES
+   ============================================ */
+
+#services {
+  padding: 7rem 4rem;
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+#services .section-title {
+  color: var(--cream);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2px;
+  margin-top: 4rem;
+}
+
+.service-card {
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.service-card:hover {
+  background: rgba(201, 168, 76, 0.08);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  color: var(--gold-light);
+}
+
+.service-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(250, 247, 242, 0.6);
+}

@@ -2,391 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ratskie Food and Catering Services — Unforgettable Celebrations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<link rel="icon" type="image/x-icon" href="/images/logo.png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-    :root {
-      --cream: #FAF7F2;
-      --warm: #F2EBE0;
-      --gold: #C9A84C;
-      --gold-light: #E8C97A;
-      --earth: #8B6E4E;
-      --charcoal: #2C2C2C;
-      --text: #3D3430;
-      --muted: #9A8A7A;
-      --success: #4A7C59;
-      --error: #9B4444;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* ---- NAV ---- */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.4rem 4rem;
-      background: rgba(250,247,242,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-      transition: all 0.3s;
-    }
-    nav .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem; font-weight: 600; letter-spacing: 0.04em;
-      color: var(--charcoal); text-decoration: none;
-    }
-    nav .logo span { color: var(--gold); }
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
-    nav ul a {
-      font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--text); text-decoration: none; font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav ul a:hover { color: var(--gold); }
-    .nav-book {
-      background: var(--charcoal); color: var(--cream) !important;
-      padding: 0.6rem 1.5rem; border-radius: 2px;
-    }
-    .nav-book:hover { background: var(--gold); color: var(--charcoal) !important; }
-
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
-
-    /* ---- HERO ---- */
-    #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative; overflow: hidden;
-      background: linear-gradient(160deg, var(--cream) 55%, var(--warm) 100%);
-    }
-    .hero-deco {
-      position: absolute; top: 0; right: 0; width: 55%; height: 100%;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Ccircle cx='400' cy='400' r='350' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='400' cy='400' r='250' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='400' cy='400' r='150' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") no-repeat center / cover;
-      opacity: 0.6;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
-      color: var(--gold); margin-bottom: 1.5rem;
-      border: 1px solid var(--gold-light); padding: 0.4rem 1rem; border-radius: 100px;
-      animation: fadeInDown 0.8s ease both;
-    }
-    .hero-badge::before { content: '✦'; font-size: 0.6rem; }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 300; line-height: 1.05;
-      color: var(--charcoal);
-      animation: fadeInUp 0.9s 0.1s ease both;
-    }
-    .hero h1 em { font-style: italic; color: var(--earth); }
-    .hero p {
-      max-width: 480px; margin-top: 1.5rem;
-      font-size: 1rem; line-height: 1.8; color: var(--muted); font-weight: 300;
-      animation: fadeInUp 0.9s 0.2s ease both;
-    }
-    .hero-ctas {
-      display: flex; gap: 1rem; margin-top: 2.5rem;
-      animation: fadeInUp 0.9s 0.3s ease both;
-    }
-    .btn-primary {
-      background: var(--charcoal); color: var(--cream);
-      padding: 1rem 2.2rem; border: none; cursor: pointer;
-      font-family: 'Jost', sans-serif; font-size: 0.82rem;
-      text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500;
-      text-decoration: none; display: inline-block;
-      transition: background 0.25s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
-    .btn-outline {
-      border: 1px solid var(--charcoal); color: var(--charcoal);
-      padding: 1rem 2.2rem; background: transparent; cursor: pointer;
-      font-family: 'Jost', sans-serif; font-size: 0.82rem;
-      text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500;
-      text-decoration: none; display: inline-block;
-      transition: all 0.25s;
-    }
-    .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
-    .hero-stats {
-      display: flex; gap: 3rem; margin-top: 4rem; padding-top: 2.5rem;
-      border-top: 1px solid rgba(201,168,76,0.25);
-      animation: fadeInUp 0.9s 0.4s ease both;
-    }
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem; font-weight: 600; color: var(--gold); line-height: 1;
-    }
-    .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.3rem; }
-
-    /* ---- SERVICES ---- */
-    #services { padding: 7rem 4rem; background: var(--charcoal); color: var(--cream); }
-    .section-label {
-      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em;
-      color: var(--gold); margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300;
-      line-height: 1.2;
-    }
-    #services .section-title { color: var(--cream); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2px; margin-top: 4rem;
-    }
-    .service-card {
-      padding: 2.5rem 2rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(201,168,76,0.12);
-      transition: background 0.3s, transform 0.3s;
-    }
-    .service-card:hover { background: rgba(201,168,76,0.08); transform: translateY(-4px); }
-    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem;
-      color: var(--gold-light);
-    }
-    .service-card p { font-size: 0.88rem; line-height: 1.7; color: rgba(250,247,242,0.6); }
-
-    /* ---- PACKAGES ---- */
-    #packages { padding: 7rem 4rem; background: var(--warm); }
-    .packages-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem; margin-top: 4rem;
-    }
-    .pkg-card {
-      background: var(--cream); border: 1px solid rgba(201,168,76,0.2);
-      padding: 2.5rem 2rem; position: relative; transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .pkg-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-    .pkg-badge {
-      position: absolute; top: -1px; right: 2rem;
-      background: var(--gold); color: var(--charcoal);
-      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em;
-      padding: 0.3rem 0.8rem; font-weight: 600;
-    }
-    .pkg-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; margin-bottom: 0.5rem;
-    }
-    .pkg-price {
-      font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .pkg-features { list-style: none; }
-    .pkg-features li {
-      font-size: 0.88rem; padding: 0.5rem 0;
-      border-bottom: 1px dashed rgba(0,0,0,0.06); color: var(--text);
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .pkg-features li::before { content: '✦'; color: var(--gold); font-size: 0.55rem; flex-shrink: 0; }
-
-    /* ---- GALLERY ---- */
-    #gallery { padding: 7rem 4rem; background: var(--cream); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 1rem; margin-top: 3rem;
-    }
-    .gallery-item {
-      position: relative; overflow: hidden;
-      background: var(--warm);
-    }
-    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
-    .gallery-placeholder {
-      width: 100%; height: 100%; min-height: 200px;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 0.5rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; color: var(--muted);
-      background: linear-gradient(135deg, var(--warm), var(--cream));
-    }
-    .gallery-placeholder .gal-icon { font-size: 2.5rem; }
-    .gallery-placeholder span { font-size: 0.95rem; }
-
-    /* ---- BOOKING FORM ---- */
-    #booking {
-      padding: 7rem 4rem;
-      background: linear-gradient(170deg, var(--charcoal) 0%, #1a1a1a 100%);
-      color: var(--cream);
-    }
-    #booking .section-title { color: var(--cream); }
-    .booking-wrap {
-      display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-top: 4rem;
-      align-items: start;
-    }
-    .booking-info h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; margin-bottom: 1rem; color: var(--gold-light);
-    }
-    .booking-info p { font-size: 0.9rem; line-height: 1.8; color: rgba(250,247,242,0.65); }
-    .booking-steps { margin-top: 2.5rem; }
-    .step {
-      display: flex; gap: 1rem; align-items: flex-start;
-      margin-bottom: 1.5rem;
-    }
-    .step-num {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: rgba(201,168,76,0.15); border: 1px solid var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem; color: var(--gold); flex-shrink: 0; font-weight: 600;
-    }
-    .step-text { font-size: 0.85rem; color: rgba(250,247,242,0.65); line-height: 1.6; }
-    .step-text strong { color: var(--cream); font-weight: 500; display: block; margin-bottom: 0.2rem; }
-
-    /* Form */
-    .form-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(201,168,76,0.15);
-      padding: 3rem;
-    }
-    .form-section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; color: var(--gold-light);
-      margin-bottom: 1.5rem; padding-bottom: 0.8rem;
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-    .form-grid.full { grid-template-columns: 1fr; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.2rem; }
-    .form-group.span2 { grid-column: span 2; }
-    .form-group label {
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
-      color: rgba(250,247,242,0.55); font-weight: 500;
-    }
-    .form-group label .req { color: var(--gold); margin-left: 2px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--cream); padding: 0.8rem 1rem;
-      font-family: 'Jost', sans-serif; font-size: 0.9rem;
-      outline: none; transition: border-color 0.25s, background 0.25s;
-      border-radius: 0;
-      -webkit-appearance: none;
-    }
-    .form-group select option { background: #2C2C2C; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.08);
-    }
-    .form-group input.error,
-    .form-group select.error,
-    .form-group textarea.error { border-color: var(--error); }
-    .form-group .err-msg {
-      font-size: 0.75rem; color: #E07070; display: none;
-    }
-    .form-group.has-error .err-msg { display: block; }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-
-    /* File upload */
-    .file-label {
-      display: flex; align-items: center; gap: 0.8rem;
-      padding: 0.8rem 1rem; cursor: pointer;
-      background: rgba(255,255,255,0.05);
-      border: 1px dashed rgba(201,168,76,0.35);
-      color: rgba(250,247,242,0.55); font-size: 0.85rem;
-      transition: border-color 0.25s;
-    }
-    .file-label:hover { border-color: var(--gold); color: var(--cream); }
-    .file-label input[type="file"] { display: none; }
-    .file-name { font-size: 0.78rem; color: var(--gold); margin-top: 0.3rem; }
-
-    /* Section separator */
-    .form-sep { height: 2rem; }
-
-    /* Submit */
-    .form-submit { margin-top: 2rem; }
-    .btn-submit {
-      width: 100%; padding: 1.1rem;
-      background: var(--gold); color: var(--charcoal);
-      border: none; cursor: pointer;
-      font-family: 'Jost', sans-serif; font-size: 0.85rem;
-      text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600;
-      transition: background 0.25s, transform 0.2s;
-    }
-    .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-    /* Success / Error message */
-    .form-message {
-      display: none; padding: 1.2rem 1.5rem;
-      margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.6;
-    }
-    .form-message.success { background: rgba(74,124,89,0.2); border: 1px solid rgba(74,124,89,0.4); color: #A8D5B5; }
-    .form-message.error { background: rgba(155,68,68,0.2); border: 1px solid rgba(155,68,68,0.4); color: #E8A0A0; }
-    .form-message.show { display: block; }
-
-    /* ---- FOOTER ---- */
-    footer {
-      background: #111; color: rgba(250,247,242,0.5);
-      padding: 3rem 4rem; display: flex;
-      justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1.5rem;
-    }
-    footer .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; color: var(--cream);
-    }
-    footer .logo span { color: var(--gold); }
-    footer p { font-size: 0.8rem; }
-    footer a { color: var(--gold); text-decoration: none; font-size: 0.8rem; }
-    footer a:hover { text-decoration: underline; }
-
-    /* ---- ANIMATIONS ---- */
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 1024px) {
-      nav { padding: 1.2rem 2rem; }
-      #hero, #services, #packages, #gallery, #booking { padding-left: 2rem; padding-right: 2rem; }
-      .booking-wrap { grid-template-columns: 1fr; gap: 3rem; }
-      .booking-info { order: 1; }
-      .form-card { order: 0; padding: 2rem; }
-    }
-    @media (max-width: 768px) {
-      nav ul, .nav-book { display: none; }
-      .hamburger { display: flex; }
-      nav ul.open {
-        display: flex; flex-direction: column;
-        position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--cream); padding: 1.5rem 2rem;
-        border-top: 1px solid rgba(201,168,76,0.2);
-        gap: 1rem;
-      }
-      nav ul.open .nav-book { display: block; }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-group.span2 { grid-column: span 1; }
-      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item:first-child { grid-column: span 1; grid-row: span 1; }
-      footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/packages.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="logo" href="#">Ratskie<span>✦</span></a>
+  <a class="logo" href="#">Ratskie Food and Catering Services <span>✦</span></a>
   <ul id="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#packages">Packages</a></li>
@@ -400,9 +42,14 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-deco"></div>
+  <div class="hero-deco">
+    <div class="hero-logo">
+      
+      
+    
+    </div>
+  </div>
   <div>
-    <div class="hero-badge">Est. 2014 &nbsp;·&nbsp; Premium Catering</div>
     <h1>Every Occasion<br>Deserves <em>Exquisite</em><br>Flavors</h1>
     <p>From intimate gatherings to grand celebrations — we craft unforgettable culinary experiences tailored to your vision, taste, and style.</p>
     <div class="hero-ctas">
@@ -452,51 +99,141 @@
   <div class="packages-grid">
     <div class="pkg-card">
       <h3>Silver</h3>
-      <div class="pkg-price">Ideal for intimate events · Up to 50 guests</div>
-      <ul class="pkg-features">
-        <li>3-course plated meal</li>
-        <li>Basic table setting</li>
-        <li>Standard floral centerpieces</li>
-        <li>2 decoration themes to choose</li>
-        <li>Event coordinator (half day)</li>
+      <div class="pkg-price">158K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <ul class="pkg-features pkg-expandable" id="pkg-silver">
+        <li><strong>Catering Service:</strong> 150 Pax Catering Service</li>
+        <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
+        <li>Buffet Table, Chaffing Dishes and Complete Utensils</li>
+        <li class="hidden-item">Tables with Center Pieces</li>
+        <li class="hidden-item">130 Chairs (Monoblock) with Cover</li>
+        <li class="hidden-item">7 Waiters, Service Water</li>
+        <li class="hidden-item"><strong>Wedding Apparels:</strong> Bride and Groom Attires, Best Man and Maid of Honor Attires</li>
+        <li class="hidden-item">4 Brides Maids, 4 Grooms Men</li>
+        <li class="hidden-item">3 Flower Girls, 3 Bearers</li>
+        <li class="hidden-item">2 Female Parents, 2 Male Parents</li>
+        <li class="hidden-item">Bridal Robes, 1pc Mannequin, Cord, Veil, Ring and Coin Pillows</li>
+        <li class="hidden-item"><strong>Venue Decorations:</strong> Couple's Backdrop, 20 x 20 Ceiling Works</li>
+        <li class="hidden-item">Elegant Chandeliers, Decorations with Elegant Set Up</li>
+        <li class="hidden-item">Presidential Table Set Up, Couple's Table, Guests Table Set Up</li>
+        <li class="hidden-item">Cake Table Set Up, Elegant Entrance Decor</li>
+        <li class="hidden-item"><strong>Make Up Artist:</strong> 8-10 Heads Hair and Make Up</li>
+        <li class="hidden-item">Flower Girls Make Up with Hair Dresser</li>
+        <li class="hidden-item"><strong>Bouquets and Boutonniers:</strong> Bridal Bouquet, Groom's Boutonniere</li>
+        <li class="hidden-item">Entourage Bouquets, Entourage & Parents Principal Sponsors Boutonniers</li>
+        <li class="hidden-item">Secondary Sponsors Boutonniers</li>
+        <li class="hidden-item"><strong>Technical Equipment:</strong> 4 Moving Heads</li>
+        <li class="hidden-item">2 Powered Speakers, 2 Sub Speakers</li>
+        <li class="hidden-item">2 Wireless Microphones, 16 Par LED and Mode Lights</li>
+        <li class="hidden-item">Smoke Machine, LED Wall</li>
+        <li class="hidden-item"><strong>Church Decorations:</strong> 10 Church Aisles Standee with Fresh Flowers</li>
+        <li class="hidden-item"><strong>Emcee and DJ:</strong> Professional DJ, Professional Emcee</li>
+        <li class="hidden-item">Arranged Program</li>
+        <li class="hidden-item">2 Layered Cake, All Can Be Eaten</li>
+        <li class="hidden-item">1 Bottle of Sparkling Wine</li>
+        <li class="hidden-item">Red Carpet, Bridal Car</li>
+        <li class="hidden-item">30 Pcs Customized Invitation Letters with Photocopies for Approval</li>
+        <li class="hidden-item"><strong>Photography:</strong> Professional Photographer</li>
+        <li class="hidden-item">Prenup Video and Photos, Photo and Video (SDE)</li>
+        <li class="hidden-item">Unlimited Shoots from Preparation Area to Church Until Reception</li>
+        <li class="hidden-item"><strong>Coordination:</strong> 1 Official Coordinator and 1 Assistant Coordinator</li>
+        <li class="hidden-item">(On Prenup and On the Day)</li>
+        <li class="hidden-item">You Can Contact Us Anytime of the Day for Queries</li>
+        <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
+      <button class="pkg-toggle" onclick="togglePackage('pkg-silver')">See More</button>
     </div>
     <div class="pkg-card">
       <div class="pkg-badge">Popular</div>
       <h3>Gold</h3>
-      <div class="pkg-price">Perfect for weddings & debuts · Up to 150 guests</div>
-      <ul class="pkg-features">
-        <li>5-course plated or buffet meal</li>
-        <li>Premium table setting & linens</li>
-        <li>Premium floral arrangements</li>
-        <li>All decoration themes</li>
-        <li>Full-day event coordinator</li>
-        <li>Dessert station included</li>
+      <div class="pkg-price">290K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <ul class="pkg-features pkg-expandable" id="pkg-gold">
+        <li><strong>Catering Service:</strong> 250 Pax Catering Service</li>
+        <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
+        <li>2 Sets of Buffet Table, Chaffing Dishes and Complete Utensils</li>
+        <li class="hidden-item">Tables with Center Pieces</li>
+        <li class="hidden-item">230 Chairs (Monoblock) with Cover</li>
+        <li class="hidden-item">12 Waiters, Service Water</li>
+        <li class="hidden-item"><strong>Wedding Apparels:</strong> Bride and Groom Attires, Best Man and Maid of Honor Attires</li>
+        <li class="hidden-item">4 Brides Maids, 4 Grooms Men</li>
+        <li class="hidden-item">3 Bearers, 3 Flower Girls</li>
+        <li class="hidden-item">2 Female Parents, 2 Male Parents</li>
+        <li class="hidden-item">Bridal Robes, Mannequin, Cord, Veil, Ring and Coin Pillows</li>
+        <li class="hidden-item"><strong>Venue Decorations:</strong> Couple's Backdrop, 40 x 40 Ceiling Works</li>
+        <li class="hidden-item">20pcs Elegant Chandeliers</li>
+        <li class="hidden-item">Decorations with Elegant Set Up</li>
+        <li class="hidden-item">Presidential Table Set Up, Couple's Table, Cake Table Set Up</li>
+        <li class="hidden-item">Elegant Entrance Decor</li>
+        <li class="hidden-item"><strong>Bouquets and Boutonniers:</strong> Bridal Bouquet, Groom's Boutonniere</li>
+        <li class="hidden-item">Entourage Bouquets, Parents & Principal Sponsors Boutonniers</li>
+        <li class="hidden-item"><strong>Church Decorations:</strong> 10 Church Aisles Standee with Fresh Flowers</li>
+        <li class="hidden-item">Red Carpet, Bridal Car</li>
+        <li class="hidden-item"><strong>Technical Equipment:</strong> LED Wall</li>
+        <li class="hidden-item">Smoke Machine (Low-Lying), 6 Moving Heads</li>
+        <li class="hidden-item">2 Powered Speakers, 2 Sub Speakers</li>
+        <li class="hidden-item">2 Wireless Microphones, 20 Par LED and Mode Lights</li>
+        <li class="hidden-item"><strong>Make Up Artist:</strong> 8-10 Heads Hair and Make Up</li>
+        <li class="hidden-item">Flower Girls Make Up with Hair Dresser</li>
+        <li class="hidden-item"><strong>Emcee and DJ:</strong> Professional DJ, Professional Emcee</li>
+        <li class="hidden-item">Arranged Program</li>
+        <li class="hidden-item">3 Layered Cake, All Can Be Eaten</li>
+        <li class="hidden-item">1 Bottle of Sparkling Wine</li>
+        <li class="hidden-item">30 Pcs Customized Invitation Letters with Photocopies for Approval</li>
+        <li class="hidden-item"><strong>Photography:</strong> Professional Photographer</li>
+        <li class="hidden-item">Prenup Video and Photos, Photo and Video (SDE)</li>
+        <li class="hidden-item">Unlimited Shoots from Preparation Area to Church Until Reception</li>
+        <li class="hidden-item"><strong>Photobooth:</strong> On the Day Photos for the Guest</li>
+        <li class="hidden-item">With 4R Hard Copies, 3 Hour Service of Shoot</li>
+        <li class="hidden-item">2 Units Iwata Big Fans, 1 Set of Lighted Dance Floor</li>
+        <li class="hidden-item"><strong>Coordination:</strong> 1 Official Coordinator and 1 Assistant Coordinator</li>
+        <li class="hidden-item">(On Prenup and On the Day)</li>
+        <li class="hidden-item">You Can Contact Us Anytime of the Day for Queries</li>
+        <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
+      <button class="pkg-toggle" onclick="togglePackage('pkg-gold')">See More</button>
     </div>
     <div class="pkg-card">
-      <h3>Platinum</h3>
-      <div class="pkg-price">Grand celebrations · 150+ guests</div>
-      <ul class="pkg-features">
-        <li>Custom chef-designed menu</li>
-        <li>Luxury table & venue styling</li>
-        <li>Luxury floral installations</li>
-        <li>Custom decoration design</li>
-        <li>Dedicated team of coordinators</li>
-        <li>Live cooking stations</li>
-        <li>Post-event cleanup included</li>
+      <h3>Aluminum</h3>
+      <div class="pkg-price">120K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <ul class="pkg-features pkg-expandable" id="pkg-aluminum">
+        <li><strong>Catering Service:</strong> 120 Pax Catering Service</li>
+        <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
+        <li>Buffet Table, Chaffing Dishes and Complete Utensils</li>
+        <li class="hidden-item">Tables with Center Pieces</li>
+        <li class="hidden-item">100 Chairs (Monoblock) with Cover</li>
+        <li class="hidden-item">7 Waiters, Service Water</li>
+        <li class="hidden-item"><strong>Wedding Apparels:</strong> Bride and Groom Attires, Best Man and Maid of Honor Attires</li>
+        <li class="hidden-item">4 Brides Maids, 4 Grooms Men</li>
+        <li class="hidden-item">3 Flower Girls, 3 Bearers</li>
+        <li class="hidden-item">2 Female Parents, 2 Male Parents</li>
+        <li class="hidden-item">Bridal Robes, 1pc Mannequin, Cord, Veil, Ring and Coin Pillows</li>
+        <li class="hidden-item"><strong>Venue Decorations:</strong> Couple's Backdrop, 20 x 20 Ceiling Works</li>
+        <li class="hidden-item">Elegant Chandeliers, Decorations with Elegant Set Up</li>
+        <li class="hidden-item">Presidential Table Set Up, Couple's Table, Guests Table Set Up</li>
+        <li class="hidden-item">Cake Table Set Up, Elegant Entrance Decor</li>
+        <li class="hidden-item"><strong>Make Up Artist:</strong> 8-10 Heads Hair and Make Up</li>
+        <li class="hidden-item">Flower Girls Make Up with Hair Dresser</li>
+        <li class="hidden-item"><strong>Bouquets and Boutonniers:</strong> Bridal Bouquet, Groom's Boutonniere</li>
+        <li class="hidden-item">Entourage Bouquets, Entourage & Parents Principal Sponsors Boutonniers</li>
+        <li class="hidden-item">Secondary Sponsors Boutonniers</li>
+        <li class="hidden-item"><strong>Technical Equipment:</strong> Basic Sound System, 4 Moving Heads</li>
+        <li class="hidden-item">2 Powered Speakers, 2 Sub Speakers</li>
+        <li class="hidden-item">2 Wireless Microphones, 16 Par LED and Mode Lights</li>
+        <li class="hidden-item"><strong>Church Decorations:</strong> 10 Church Aisles Standee with Fresh Flowers</li>
+        <li class="hidden-item"><strong>Emcee and DJ:</strong> Professional DJ, Professional Emcee</li>
+        <li class="hidden-item">Arranged Program</li>
+        <li class="hidden-item">2 Layered Cake, All Can Be Eaten</li>
+        <li class="hidden-item">1 Bottle of Sparkling Wine</li>
+        <li class="hidden-item">Red Carpet, Bridal Car</li>
+        <li class="hidden-item">30 Pcs Customized Invitation Letters with Photocopies for Approval</li>
+        <li class="hidden-item"><strong>Photography:</strong> Professional Photographer</li>
+        <li class="hidden-item">Prenup Video and Photos, Photo and Video (SDE)</li>
+        <li class="hidden-item">Unlimited Shoots from Preparation Area to Church Until Reception</li>
+        <li class="hidden-item"><strong>Coordination:</strong> 1 Official Coordinator and 1 Assistant Coordinator</li>
+        <li class="hidden-item">(On Prenup and On the Day)</li>
+        <li class="hidden-item">You Can Contact Us Anytime of the Day for Queries</li>
+        <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
-    </div>
-    <div class="pkg-card">
-      <h3>Custom</h3>
-      <div class="pkg-price">Tailored to your exact needs</div>
-      <ul class="pkg-features">
-        <li>Build your own menu</li>
-        <li>Choose any combination</li>
-        <li>Flexible guest count</li>
-        <li>Personal consultation</li>
-        <li>Fully bespoke experience</li>
-      </ul>
+      <button class="pkg-toggle" onclick="togglePackage('pkg-aluminum')">See More</button>
     </div>
   </div>
 </section>
@@ -505,36 +242,38 @@
 <section id="gallery">
   <div class="section-label">Inspiration</div>
   <h2 class="section-title">Events We've Created</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <div class="gallery-placeholder" style="min-height:400px">
-        <div class="gal-icon">💒</div>
-        <span>Wedding Elegance</span>
+  
+  <div class="slideshow-container">
+    <!-- Slides -->
+    <div class="slideshow-wrapper">
+      <div class="slide fade">
+        <img src="images/wedding.jpg" alt="Wedding Elegance" class="slide-image">
+      </div>
+      <div class="slide fade">
+        <img src="images/birthday.jpg" alt="Birthday Celebration" class="slide-image">
+      </div>
+      <div class="slide fade">
+        <img src="images/table.jpg" alt="Corporate Events" class="slide-image">
+      </div>
+      <div class="slide fade">
+        <img src="images/weddimg1.jpg" alt="Debut Parties" class="slide-image">
+      </div>
+      <div class="slide fade">
+        <img src="images/anniversary.jpg" alt="Anniversaries" class="slide-image">
       </div>
     </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">🎂</div>
-        <span>Birthday Celebration</span>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">🏢</div>
-        <span>Corporate Events</span>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">🌸</div>
-        <span>Debut Parties</span>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">
-        <div class="gal-icon">🥂</div>
-        <span>Anniversaries</span>
-      </div>
+
+    <!-- Navigation Controls -->
+    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+
+    <!-- Slide Indicators -->
+    <div class="slide-dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
     </div>
   </div>
 </section>
@@ -648,10 +387,9 @@
             <label>Select Package <span class="req">*</span></label>
             <select name="food_package">
               <option value="">Choose a food package...</option>
-              <option value="silver">Silver — Plated 3-course (up to 50 guests)</option>
-              <option value="gold">Gold — 5-course or Buffet (up to 150 guests)</option>
-              <option value="platinum">Platinum — Custom Chef Menu (150+ guests)</option>
-              <option value="custom">Custom — Build your own menu</option>
+              <option value="silver">Silver — 158K (150 Pax Catering)</option>
+              <option value="gold">Gold — 290K (250 Pax Catering)</option>
+              <option value="aluminum">Aluminum — 120K (120 Pax Catering)</option>
             </select>
             <span class="err-msg">Please select a food package.</span>
           </div>
@@ -733,109 +471,10 @@
   <div class="logo">Ratskie<span>✦</span></div>
   <p>© 2024 Ratskie Food and Catering Services. All rights reserved.</p>
   <div style="display:flex;gap:1.5rem">
-    <a href="tel:+6391234567890">📞 +63 912 345 6789</a>
-    <a href="mailto:hello@lumiere.ph">✉ hello@lumiere.ph</a>
+    <a href="tel:+6391234567890">📞 +63 9752985748</a>
     <a href="/admin">Admin</a>
   </div>
 </footer>
 
-<script>
-  const API = '';
-
-  // Hamburger
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('open');
-  });
-
-  // File upload label
-  document.getElementById('inspiration_image').addEventListener('change', function () {
-    const name = this.files[0] ? this.files[0].name : '';
-    document.getElementById('file-label-text').textContent = name || 'Click to upload an image';
-    document.getElementById('file-name-display').textContent = name ? `Selected: ${name}` : '';
-  });
-
-  // Validation helpers
-  function showError(name, show) {
-    const grp = document.getElementById(`grp-${name}`);
-    if (!grp) return;
-    const input = grp.querySelector('input,select,textarea');
-    grp.classList.toggle('has-error', show);
-    if (input) input.classList.toggle('error', show);
-  }
-
-  function validateForm(data) {
-    let valid = true;
-    const required = [
-      'customer_name','customer_email','customer_phone','customer_address',
-      'event_type','event_date','event_time','event_venue','guest_count',
-      'food_package','decoration_theme','flower_arrangement'
-    ];
-    required.forEach(f => {
-      const val = data.get(f);
-      const empty = !val || !val.trim();
-      showError(f, empty);
-      if (empty) valid = false;
-    });
-
-    // Email
-    const email = data.get('customer_email');
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError('customer_email', true);
-      valid = false;
-    }
-
-    // Date must be in the future
-    const dateVal = data.get('event_date');
-    if (dateVal && new Date(dateVal) < new Date(new Date().toDateString())) {
-      showError('event_date', true);
-      valid = false;
-    }
-
-    return valid;
-  }
-
-  // Form submit
-  document.getElementById('bookingForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    if (!validateForm(formData)) return;
-
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('formMessage');
-    btn.disabled = true;
-    btn.textContent = 'Submitting...';
-    msg.className = 'form-message';
-
-    try {
-      const res = await fetch(`${API}/api/inquiries`, { method: 'POST', body: formData });
-      const json = await res.json();
-      if (res.ok) {
-        msg.textContent = `✅ ${json.message} Your inquiry ID is #${json.inquiry_id}.`;
-        msg.className = 'form-message success show';
-        this.reset();
-        document.getElementById('file-label-text').textContent = 'Click to upload an image';
-        document.getElementById('file-name-display').textContent = '';
-      } else {
-        msg.textContent = `⚠️ ${json.message}`;
-        msg.className = 'form-message error show';
-      }
-    } catch (err) {
-      msg.textContent = '❌ Network error. Please try again.';
-      msg.className = 'form-message error show';
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Submit Inquiry';
-      msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  });
-
-  // Clear error on input
-  document.querySelectorAll('input,select,textarea').forEach(el => {
-    el.addEventListener('input', () => {
-      const grp = el.closest('.form-group');
-      if (grp) { grp.classList.remove('has-error'); el.classList.remove('error'); }
-    });
-  });
-</script>
-</body>
-</html>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>

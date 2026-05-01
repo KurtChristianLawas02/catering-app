@@ -1,0 +1,38 @@
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+footer {
+  background: #111;
+  color: rgba(250, 247, 242, 0.5);
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+footer .logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+}
+
+footer .logo span {
+  color: var(--gold);
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

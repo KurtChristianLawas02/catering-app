@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS inquiries (
     special_requests TEXT,
 
     -- Package Selections
-    food_package ENUM('silver','gold','platinum','custom') NOT NULL,
+    food_package ENUM('silver','gold','aluminum') NOT NULL,
     food_package_details TEXT,
     decoration_theme ENUM('elegant','rustic','modern','garden','tropical','vintage','minimalist') NOT NULL,
     flower_arrangement ENUM('classic_roses','tropical_mix','wildflower','orchid_luxury','sunflower_garden','peony_romance','none') NOT NULL,

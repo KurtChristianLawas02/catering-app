@@ -1,0 +1,124 @@
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 1.2rem 2rem;
+  }
+
+  #hero,
+  #services,
+  #packages,
+  #gallery,
+  #booking {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .booking-wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .booking-info {
+    order: 1;
+  }
+
+  .form-card {
+    order: 0;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul,
+  .nav-book {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    gap: 1rem;
+  }
+
+  nav ul.open .nav-book {
+    display: block;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.span2 {
+    grid-column: span 1;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .slide-btn {
+    padding: 10px 14px;
+    font-size: 1.2rem;
+  }
+
+  .slide-btn.prev {
+    left: 10px;
+  }
+
+  .slide-btn.next {
+    right: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #gallery {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .slide-btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .slide-btn.prev {
+    left: 5px;
+  }
+
+  .slide-btn.next {
+    right: 5px;
+  }
+
+  .slide-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
