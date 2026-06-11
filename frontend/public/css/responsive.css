@@ -10,10 +10,14 @@
   #hero,
   #services,
   #packages,
-  #gallery,
+  #events,
   #booking {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .events-calendar-wrap {
+    grid-template-columns: 1fr;
   }
 
   .booking-wrap {
@@ -71,17 +75,26 @@
     gap: 1.5rem;
   }
 
-  .slide-btn {
-    padding: 10px 14px;
-    font-size: 1.2rem;
+  #hero {
+    padding: 7rem 2rem 5rem;
   }
 
-  .slide-btn.prev {
-    left: 10px;
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .slide-btn.next {
-    right: 10px;
+  .hero-ctas a {
+    width: min(100%, 260px);
+    text-align: center;
+  }
+
+  .hero-slide-btn {
+    display: none;
+  }
+
+  .hero-slide-dots {
+    left: 2rem;
   }
 
   footer {
@@ -91,34 +104,39 @@
 }
 
 @media (max-width: 480px) {
-  #gallery {
+  #events {
     padding: 5rem 1.5rem;
+  }
+
+  .calendar-panel {
+    padding: 1rem;
+  }
+
+  .calendar-toolbar h3 {
+    font-size: 1.45rem;
+  }
+
+  .calendar-weekdays {
+    font-size: 0.62rem;
+  }
+
+  .calendar-day {
+    min-height: 74px;
+    padding: 0.45rem;
+  }
+
+  .calendar-event-pill {
+    font-size: 0;
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gold);
   }
 
   .section-title {
     font-size: 1.8rem;
   }
 
-  .slide-btn {
-    padding: 8px 12px;
-    font-size: 1rem;
-  }
-
-  .slide-btn.prev {
-    left: 5px;
-  }
-
-  .slide-btn.next {
-    right: 5px;
-  }
-
-  .slide-dots {
-    bottom: 15px;
-    gap: 8px;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
 }

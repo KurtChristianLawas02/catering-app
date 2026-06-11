@@ -12,6 +12,31 @@
   color: var(--cream);
 }
 
+.booking-page {
+  min-height: 100vh;
+  padding-top: 9rem;
+}
+
+.booking-cta-section {
+  text-align: center;
+}
+
+.booking-cta-section p {
+  max-width: 680px;
+  margin: 1rem auto 2rem;
+  color: rgba(250, 247, 242, 0.68);
+  line-height: 1.8;
+}
+
+.booking-cta-section .btn-primary {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.booking-cta-section .btn-primary:hover {
+  background: var(--gold-light);
+}
+
 .booking-wrap {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -170,6 +195,231 @@
 .form-group textarea {
   resize: vertical;
   min-height: 90px;
+}
+
+.customize-panel {
+  padding: 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  background: rgba(201, 168, 76, 0.07);
+  max-height: 680px;
+  overflow-y: auto;
+}
+
+.customize-panel[hidden] {
+  display: none;
+}
+
+.customize-options {
+  display: grid;
+  gap: 1rem;
+}
+
+.customize-help {
+  color: rgba(250, 247, 242, 0.65);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  margin-bottom: 0.65rem;
+}
+
+.customize-count {
+  display: inline-flex;
+  align-self: flex-start;
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  background: rgba(201, 168, 76, 0.1);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+}
+
+.customize-category {
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.customize-category[open] {
+  padding-bottom: 0.85rem;
+}
+
+.customize-category summary {
+  color: var(--gold-light);
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem;
+  color: var(--gold-light);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.customize-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.customize-category summary::after {
+  content: "Select";
+  color: var(--charcoal);
+  background: var(--gold);
+  border-radius: 100px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.customize-category[open] summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  margin-bottom: 0.55rem;
+}
+
+.customize-category[open] summary::after {
+  content: "Hide";
+  background: rgba(201, 168, 76, 0.16);
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+}
+
+.customize-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  margin: 0 0.85rem 0.55rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.customize-option:hover {
+  border-color: rgba(201, 168, 76, 0.38);
+  background: rgba(201, 168, 76, 0.09);
+}
+
+.customize-option:has(input:checked) {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.16);
+  padding-right: 2.6rem;
+}
+
+.customize-option:has(input:checked)::after {
+  content: "✓";
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.customize-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+}
+
+.customize-option span {
+  color: var(--cream);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.package-inclusions-panel {
+  padding: 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  background: rgba(201, 168, 76, 0.07);
+}
+
+.package-inclusions-panel[hidden] {
+  display: none;
+}
+
+.package-inclusions-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.inclusion-add-btn,
+.inclusion-remove-btn {
+  border: 1px solid rgba(201, 168, 76, 0.36);
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold-light);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.inclusion-add-btn {
+  padding: 0.55rem 0.8rem;
+}
+
+.inclusion-remove-btn {
+  min-width: 34px;
+  height: 34px;
+}
+
+.inclusion-add-btn:hover,
+.inclusion-remove-btn:hover {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.2);
+}
+
+.package-inclusions-list {
+  display: grid;
+  gap: 0.55rem;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.package-inclusion-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.package-inclusion-row:has(input[type="checkbox"]:checked) {
+  border-color: rgba(201, 168, 76, 0.42);
+  background: rgba(201, 168, 76, 0.12);
+}
+
+.package-inclusion-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+}
+
+.package-inclusion-row input[type="text"] {
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
 }
 
 /* File Upload */

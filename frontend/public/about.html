@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Ratskie Food and Catering Services</title>
+  <link rel="icon" type="image/png" href="/images/ratskie-logo.png" />
+  <link rel="apple-touch-icon" href="/images/ratskie-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    body { background: var(--charcoal); color: var(--cream); }
+    .about-page {
+      min-height: 100vh;
+      padding: 9rem 4rem 5rem;
+      background: linear-gradient(170deg, var(--charcoal) 0%, #171717 100%);
+    }
+    .about-wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 2rem; }
+    .about-intro {
+      border-bottom: 1px solid rgba(201, 168, 76, 0.22);
+      padding-bottom: 2rem;
+    }
+    .about-intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 600;
+      line-height: 0.95;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .about-intro p {
+      color: rgba(250, 247, 242, 0.68);
+      line-height: 1.8;
+      max-width: 720px;
+    }
+    .about-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .about-item {
+      border: 1px solid rgba(201, 168, 76, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.3rem;
+    }
+    .about-item .label {
+      color: var(--gold);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.55rem;
+    }
+    .about-item .value { color: var(--cream); font-size: 1rem; line-height: 1.55; }
+    .about-item a { color: var(--cream); text-decoration: none; }
+    .about-item a:hover { color: var(--gold-light); }
+    .status-open { color: #d99b5f; }
+    .about-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .about-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.2rem;
+      border: 1px solid var(--gold);
+      color: var(--charcoal);
+      background: var(--gold);
+      text-decoration: none;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+    .about-actions a.secondary { background: transparent; color: var(--gold-light); }
+    @media (max-width: 700px) { .about-page { padding: 8rem 1.2rem 4rem; } }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a class="logo" href="/">Ratskie Food and Catering Services <span>*</span></a>
+    <ul id="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#packages">Packages</a></li>
+      <li><a href="/#events">Events</a></li>
+      <li><a href="/successful-events.html">Successful Events</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/booking.html" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="about-page">
+    <section class="about-wrap">
+      <div class="about-intro">
+        <div class="section-label">Details</div>
+        <h1>Ratskie Food and Catering Services</h1>
+        <p>Affordable catering for birthdays, weddings, baptisms, fiesta celebrations, corporate events, and family gatherings with food, setup, and service options customers can tailor to their event.</p>
+      </div>
+
+      <div class="about-details">
+        <div class="about-item">
+          <div class="label">Status</div>
+          <div class="value status-open">Open Now</div>
+        </div>
+        <div class="about-item">
+          <div class="label">Address</div>
+          <div class="value">Tangasan, Valladolid, Carcar, Philippines, 6019</div>
+        </div>
+        <div class="about-item">
+          <div class="label">Contact Number</div>
+          <div class="value"><a href="tel:+639291333852">0929 133 3852</a></div>
+        </div>
+        <div class="about-item">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:archie.regodon5@gmail.con">archie.regodon5@gmail.con</a></div>
+        </div>
+        <div class="about-item">
+          <div class="label">Business Name</div>
+          <div class="value">Ratskie Food and Catering Services</div>
+        </div>
+      </div>
+
+      <div class="about-actions">
+        <a href="/booking.html">Book Now</a>
+        <a class="secondary" href="tel:+639291333852">Call 0929 133 3852</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"> TATAK Ratskie<span>*</span></div>
+    <a href="/about.html">About Us</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="tel:+639291333852">0929 133 3852</a>
+      <a href="/admin">Admin</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

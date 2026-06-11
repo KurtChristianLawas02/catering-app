@@ -20,11 +20,14 @@ nav {
 
 nav .logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
+  font-size: clamp(1.55rem, 2vw, 2rem);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: var(--charcoal);
   text-decoration: none;
+  line-height: 1;
+  text-wrap: balance;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.75);
 }
 
 nav .logo span {
@@ -34,28 +37,54 @@ nav .logo span {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  align-items: center;
+  gap: clamp(1.25rem, 2vw, 2.5rem);
 }
 
 nav ul a {
-  font-size: 0.82rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+  font-weight: 600;
+  transition: color 0.2s, transform 0.2s;
 }
 
 nav ul a:hover {
   color: var(--gold);
+  transform: translateY(-1px);
+}
+
+nav ul a:not(.nav-book)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s;
+}
+
+nav ul a:not(.nav-book):hover::after {
+  transform: scaleX(1);
 }
 
 .nav-book {
   background: var(--charcoal);
   color: var(--cream) !important;
-  padding: 0.6rem 1.5rem;
-  border-radius: 2px;
+  min-height: auto;
+  padding: 0.7rem 1.35rem;
+  border-radius: 4px;
+  box-shadow: 0 8px 18px rgba(44,44,44,0.12);
 }
 
 .nav-book:hover {

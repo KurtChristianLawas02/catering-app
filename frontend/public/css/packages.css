@@ -120,6 +120,6 @@
 }
 
 .pkg-toggle:hover {
-  background: var(--accent);
+  background: var(--gold-light);
   transform: scale(1.02);
 }

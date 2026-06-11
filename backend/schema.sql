@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS inquiries (
     special_requests TEXT,
 
     -- Package Selections
-    food_package ENUM('silver','gold','aluminum') NOT NULL,
+    food_package ENUM('silver','gold','aluminum','customize') NOT NULL,
     food_package_details TEXT,
     decoration_theme ENUM('elegant','rustic','modern','garden','tropical','vintage','minimalist') NOT NULL,
     flower_arrangement ENUM('classic_roses','tropical_mix','wildflower','orchid_luxury','sunflower_garden','peony_romance','none') NOT NULL,
@@ -48,6 +48,25 @@ CREATE TABLE IF NOT EXISTS inquiries (
     -- Timestamps
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Successful events posts
+CREATE TABLE IF NOT EXISTS successful_events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    caption TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS successful_event_photos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    original_name VARCHAR(255),
+    sort_order INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (event_id) REFERENCES successful_events(id) ON DELETE CASCADE
 );
 
 -- Seed default admin account (password: admin123)

@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ratskie Food and Catering Services — Unforgettable Celebrations</title>
-<link rel="icon" type="image/x-icon" href="/images/logo.png" />
+  <link rel="icon" type="image/png" href="/images/ratskie-logo.png" />
+  <link rel="apple-touch-icon" href="/images/ratskie-logo.png" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
@@ -19,7 +20,7 @@
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/services.css" />
   <link rel="stylesheet" href="css/packages.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/events.css" />
   <link rel="stylesheet" href="css/booking.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
@@ -32,8 +33,10 @@
   <ul id="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#packages">Packages</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#booking" class="nav-book">Book Now</a></li>
+    <li><a href="#events"> Calendar of Events</a></li>
+    <li><a href="/successful-events.html">Successful Events</a></li>
+    <li><a href="/about.html">About Us</a></li>
+    <li><a href="/booking.html" class="nav-book">Book Now</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -42,18 +45,32 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-deco">
-    <div class="hero-logo">
-      
-      
-    
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active">
+      <img src="images/wedding.jpg" alt="Elegant wedding catering setup">
+    </div>
+    <div class="hero-slide">
+      <img src="images/birthday.jpg" alt="Birthday celebration catering setup">
+    </div>
+    <div class="hero-slide">
+      <img src="images/table.jpg" alt="Styled event table setup">
+    </div>
+    <div class="hero-slide">
+      <img src="images/weddimg1.jpg" alt="Wedding reception styling">
+    </div>
+    <div class="hero-slide">
+      <img src="images/anniversary.jpg" alt="Anniversary event catering">
     </div>
   </div>
-  <div>
-    <h1>Every Occasion<br>Deserves <em>Exquisite</em><br>Flavors</h1>
+
+  <button class="hero-slide-btn prev" type="button" aria-label="Previous hero image" onclick="changeHeroSlide(-1)">&#10094;</button>
+  <button class="hero-slide-btn next" type="button" aria-label="Next hero image" onclick="changeHeroSlide(1)">&#10095;</button>
+
+  <div class="hero-content">
+    <h1>We don't just<br>Serve <em>Food</em><br>We Serve Happiness</h1>
     <p>From intimate gatherings to grand celebrations — we craft unforgettable culinary experiences tailored to your vision, taste, and style.</p>
     <div class="hero-ctas">
-      <a href="#booking" class="btn-primary">Book a Service</a>
+      <a href="/booking.html" class="btn-primary">Book a Service</a>
       <a href="#packages" class="btn-outline">View Packages</a>
     </div>
     <div class="hero-stats">
@@ -61,6 +78,14 @@
       <div><div class="stat-num">12</div><div class="stat-label">Years Experience</div></div>
       <div><div class="stat-num">98%</div><div class="stat-label">Client Satisfaction</div></div>
     </div>
+  </div>
+
+  <div class="hero-slide-dots" aria-label="Hero slideshow controls">
+    <button class="hero-dot active" type="button" aria-label="Show wedding image" onclick="setHeroSlide(1)"></button>
+    <button class="hero-dot" type="button" aria-label="Show birthday image" onclick="setHeroSlide(2)"></button>
+    <button class="hero-dot" type="button" aria-label="Show table setup image" onclick="setHeroSlide(3)"></button>
+    <button class="hero-dot" type="button" aria-label="Show reception image" onclick="setHeroSlide(4)"></button>
+    <button class="hero-dot" type="button" aria-label="Show anniversary image" onclick="setHeroSlide(5)"></button>
   </div>
 </section>
 
@@ -70,22 +95,22 @@
   <h2 class="section-title">Crafted with Passion,<br>Served with Elegance</h2>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">🍽️</div>
+      <div class="service-icon"></div>
       <h3>Culinary Excellence</h3>
       <p>From international cuisine to local specialties, our chefs create menus that delight every palate.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🌸</div>
+      <div class="service-icon"></div>
       <h3>Floral Arrangements</h3>
       <p>Bespoke floral designs that complement your event theme, from classic roses to tropical blooms.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">✨</div>
+      <div class="service-icon"></div>
       <h3>Event Decoration</h3>
       <p>Transform any venue with our curated decoration themes — elegant, rustic, modern, and more.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">📋</div>
+      <div class="service-icon"></div>
       <h3>Full Event Planning</h3>
       <p>End-to-end event coordination, letting you enjoy your special day without the stress.</p>
     </div>
@@ -237,239 +262,38 @@
     </div>
   </div>
 </section>
+<!-- EVENTS CALENDAR -->
+<section id="events">
+  <div class="section-label">Approved Bookings</div>
+  <h2 class="section-title">Calendar of Events</h2>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="section-label">Inspiration</div>
-  <h2 class="section-title">Events We've Created</h2>
-  
-  <div class="slideshow-container">
-    <!-- Slides -->
-    <div class="slideshow-wrapper">
-      <div class="slide fade">
-        <img src="images/wedding.jpg" alt="Wedding Elegance" class="slide-image">
+  <div class="events-calendar-wrap">
+    <div class="calendar-panel">
+      <div class="calendar-toolbar">
+        <button type="button" class="calendar-nav" id="prevMonth" aria-label="Previous month">&#10094;</button>
+        <h3 id="calendarMonth">Loading...</h3>
+        <button type="button" class="calendar-nav" id="nextMonth" aria-label="Next month">&#10095;</button>
       </div>
-      <div class="slide fade">
-        <img src="images/birthday.jpg" alt="Birthday Celebration" class="slide-image">
+      <div class="calendar-weekdays">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
       </div>
-      <div class="slide fade">
-        <img src="images/table.jpg" alt="Corporate Events" class="slide-image">
-      </div>
-      <div class="slide fade">
-        <img src="images/weddimg1.jpg" alt="Debut Parties" class="slide-image">
-      </div>
-      <div class="slide fade">
-        <img src="images/anniversary.jpg" alt="Anniversaries" class="slide-image">
-      </div>
+      <div class="calendar-grid" id="eventsCalendarGrid"></div>
     </div>
 
-    <!-- Navigation Controls -->
-    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
-
-    <!-- Slide Indicators -->
-    <div class="slide-dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-    </div>
   </div>
 </section>
 
-<!-- BOOKING FORM -->
-<section id="booking">
-  <div class="section-label">Get Started</div>
-  <h2 class="section-title">Inquire &amp; Book a Service</h2>
-
-  <div class="booking-wrap">
-    <!-- Sidebar Info -->
-    <div class="booking-info">
-      <h3>Let's Plan Your Perfect Event</h3>
-      <p>Fill out the form and our team will get back to you within 24 hours to confirm your booking and discuss details.</p>
-      <div class="booking-steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text"><strong>Submit Inquiry</strong>Fill in your event details and preferences.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text"><strong>Consultation Call</strong>Our team will reach out to finalize details.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text"><strong>Confirmation</strong>Receive your booking confirmation and contract.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-text"><strong>Enjoy Your Event</strong>Sit back and let us handle everything.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Form -->
-    <div class="form-card">
-      <form id="bookingForm" novalidate>
-
-        <!-- Personal Details -->
-        <div class="form-section-title">👤 Personal Details</div>
-        <div class="form-grid">
-          <div class="form-group" id="grp-customer_name">
-            <label>Full Name <span class="req">*</span></label>
-            <input type="text" name="customer_name" placeholder="Juan dela Cruz">
-            <span class="err-msg">Please enter your full name.</span>
-          </div>
-          <div class="form-group" id="grp-customer_phone">
-            <label>Contact Number <span class="req">*</span></label>
-            <input type="tel" name="customer_phone" placeholder="09XX XXX XXXX">
-            <span class="err-msg">Please enter a valid phone number.</span>
-          </div>
-          <div class="form-group span2" id="grp-customer_email">
-            <label>Email Address <span class="req">*</span></label>
-            <input type="email" name="customer_email" placeholder="juan@email.com">
-            <span class="err-msg">Please enter a valid email address.</span>
-          </div>
-          <div class="form-group span2" id="grp-customer_address">
-            <label>Complete Address <span class="req">*</span></label>
-            <input type="text" name="customer_address" placeholder="House No., Street, Barangay, City, Province">
-            <span class="err-msg">Please enter your complete address.</span>
-          </div>
-        </div>
-
-        <div class="form-sep"></div>
-
-        <!-- Event Details -->
-        <div class="form-section-title">📅 Event Details</div>
-        <div class="form-grid">
-          <div class="form-group" id="grp-event_type">
-            <label>Event Type <span class="req">*</span></label>
-            <select name="event_type">
-              <option value="">Select event type...</option>
-              <option value="wedding">Wedding</option>
-              <option value="birthday">Birthday</option>
-              <option value="corporate">Corporate</option>
-              <option value="debut">Debut / 18th Birthday</option>
-              <option value="reunion">Family Reunion</option>
-              <option value="anniversary">Anniversary</option>
-              <option value="other">Other</option>
-            </select>
-            <span class="err-msg">Please select an event type.</span>
-          </div>
-          <div class="form-group" id="grp-guest_count">
-            <label>Estimated Guest Count <span class="req">*</span></label>
-            <input type="number" name="guest_count" placeholder="e.g. 100" min="1">
-            <span class="err-msg">Please enter the guest count.</span>
-          </div>
-          <div class="form-group" id="grp-event_date">
-            <label>Event Date <span class="req">*</span></label>
-            <input type="date" name="event_date">
-            <span class="err-msg">Please select a valid future date.</span>
-          </div>
-          <div class="form-group" id="grp-event_time">
-            <label>Event Time <span class="req">*</span></label>
-            <input type="time" name="event_time">
-            <span class="err-msg">Please select a time.</span>
-          </div>
-          <div class="form-group span2" id="grp-event_venue">
-            <label>Venue / Location <span class="req">*</span></label>
-            <input type="text" name="event_venue" placeholder="Venue name and address">
-            <span class="err-msg">Please enter the event venue.</span>
-          </div>
-        </div>
-
-        <div class="form-sep"></div>
-
-        <!-- Package Selection -->
-        <div class="form-section-title">🍽️ Food Package</div>
-        <div class="form-grid">
-          <div class="form-group span2" id="grp-food_package">
-            <label>Select Package <span class="req">*</span></label>
-            <select name="food_package">
-              <option value="">Choose a food package...</option>
-              <option value="silver">Silver — 158K (150 Pax Catering)</option>
-              <option value="gold">Gold — 290K (250 Pax Catering)</option>
-              <option value="aluminum">Aluminum — 120K (120 Pax Catering)</option>
-            </select>
-            <span class="err-msg">Please select a food package.</span>
-          </div>
-          <div class="form-group span2">
-            <label>Additional Food Notes / Dietary Requirements</label>
-            <textarea name="food_package_details" placeholder="Any dietary restrictions, preferred dishes, or special requests..."></textarea>
-          </div>
-        </div>
-
-        <div class="form-sep"></div>
-
-        <!-- Design & Flowers -->
-        <div class="form-section-title">✨ Decoration &amp; Flowers</div>
-        <div class="form-grid">
-          <div class="form-group" id="grp-decoration_theme">
-            <label>Decoration Theme <span class="req">*</span></label>
-            <select name="decoration_theme">
-              <option value="">Choose a theme...</option>
-              <option value="elegant">Elegant — Timeless luxury, gold & ivory</option>
-              <option value="rustic">Rustic — Warm wood, greenery & earth tones</option>
-              <option value="modern">Modern — Clean lines, monochrome, geometric</option>
-              <option value="garden">Garden — Lush florals, pastel, al fresco</option>
-              <option value="tropical">Tropical — Vibrant, palms, bright colors</option>
-              <option value="vintage">Vintage — Lace, antique, romantic pastels</option>
-              <option value="minimalist">Minimalist — Simple, white space, zen</option>
-            </select>
-            <span class="err-msg">Please select a decoration theme.</span>
-          </div>
-          <div class="form-group" id="grp-flower_arrangement">
-            <label>Flower Arrangement <span class="req">*</span></label>
-            <select name="flower_arrangement">
-              <option value="">Choose flowers...</option>
-              <option value="classic_roses">Classic Roses — Red, white, or blush</option>
-              <option value="tropical_mix">Tropical Mix — Anthurium, bird of paradise</option>
-              <option value="wildflower">Wildflower — Sunflowers, daisies, lavender</option>
-              <option value="orchid_luxury">Orchid Luxury — Premium orchid installations</option>
-              <option value="sunflower_garden">Sunflower Garden — Warm & cheerful</option>
-              <option value="peony_romance">Peony Romance — Soft, romantic, lush</option>
-              <option value="none">No floral arrangement needed</option>
-            </select>
-            <span class="err-msg">Please select a flower arrangement.</span>
-          </div>
-        </div>
-
-        <div class="form-sep"></div>
-
-        <!-- Special Requests & Image Upload -->
-        <div class="form-section-title">📎 Additional Information</div>
-        <div class="form-grid full">
-          <div class="form-group">
-            <label>Special Requests or Notes</label>
-            <textarea name="special_requests" placeholder="Anything else you'd like us to know..."></textarea>
-          </div>
-          <div class="form-group">
-            <label>Event Inspiration Image (optional · max 5MB)</label>
-            <label class="file-label" for="inspiration_image">
-              <span>📷</span>
-              <span id="file-label-text">Click to upload an image (JPG, PNG, GIF, WEBP)</span>
-              <input type="file" id="inspiration_image" name="inspiration_image" accept="image/*">
-            </label>
-            <div class="file-name" id="file-name-display"></div>
-          </div>
-        </div>
-
-        <div class="form-submit">
-          <button type="submit" class="btn-submit" id="submitBtn">
-            Submit Inquiry
-          </button>
-        </div>
-
-        <div class="form-message" id="formMessage"></div>
-      </form>
-    </div>
-  </div>
+<!-- BOOKING CTA -->
+<section id="booking" class="booking-cta-section">
+  <div class="section-label">Ready When You Are</div>
+  <h2 class="section-title">Start Planning Your Event</h2>
+  <p>Tell us about your celebration and our team will help confirm the package, date, venue details, and styling preferences.</p>
+  <a href="/booking.html" class="btn-primary">Open Booking Form</a>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="logo">Ratskie<span>✦</span></div>
-  <p>© 2024 Ratskie Food and Catering Services. All rights reserved.</p>
+  <div class="logo"> TATAK Ratskie<span>✦</span></div>
+  <a href="/about.html">About Us</a>
   <div style="display:flex;gap:1.5rem">
     <a href="tel:+6391234567890">📞 +63 9752985748</a>
     <a href="/admin">Admin</a>
@@ -478,3 +302,5 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+</body>
+</html>

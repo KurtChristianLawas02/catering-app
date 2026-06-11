@@ -69,6 +69,23 @@ JWT_SECRET=your_super_secret_key
 PORT=3000
 ```
 
+To send automatic customer replies after an inquiry is submitted, add Gmail SMTP and SMS provider settings:
+
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=yourbusiness@gmail.com
+SMTP_PASS=your_gmail_app_password
+NOTIFY_EMAIL_FROM="Ratskie Food and Catering Services <yourbusiness@gmail.com>"
+
+SMS_PROVIDER=semaphore
+SEMAPHORE_API_KEY=your_semaphore_api_key
+SEMAPHORE_SENDER_NAME=RATSKIE
+```
+
+For Gmail, use a Google App Password. For SMS, the built-in setup supports Semaphore by default and Twilio if `SMS_PROVIDER=twilio` plus the `TWILIO_*` values are configured.
+
 ### 4. Start the Server
 ```bash
 # Development (auto-restart):

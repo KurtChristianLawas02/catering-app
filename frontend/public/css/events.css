@@ -1,0 +1,131 @@
+/* ============================================
+   EVENTS CALENDAR STYLES
+   ============================================ */
+
+#events {
+  padding: 7rem 4rem;
+  background: #f9f6f0;
+}
+
+.events-calendar-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 920px);
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.calendar-panel {
+  background: #fff;
+  border: 1px solid #e8e2d8;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(44, 44, 44, 0.06);
+}
+
+.calendar-panel {
+  padding: 1.5rem;
+}
+
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-toolbar h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+.calendar-nav {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e8e2d8;
+  background: var(--cream);
+  color: var(--charcoal);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.calendar-nav:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekdays {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.calendar-day {
+  min-height: 96px;
+  padding: 0.65rem;
+  border: 1px solid #eee8df;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calendar-day.muted {
+  background: #fbf8f3;
+  color: #b6aa9c;
+}
+
+.calendar-day.today {
+  outline: 2px solid rgba(201, 168, 76, 0.45);
+  outline-offset: -2px;
+}
+
+.calendar-date {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.calendar-event-pill {
+  border: 0;
+  border-left: 3px solid var(--gold);
+  background: rgba(201, 168, 76, 0.12);
+  color: #6d5520;
+  text-align: left;
+  padding: 0.35rem 0.45rem;
+  font: inherit;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  cursor: default;
+  border-radius: 4px;
+}
+
+.calendar-event-pill.completed {
+  border-left-color: #5a7ba8;
+  background: rgba(90, 123, 168, 0.12);
+  color: #2a4d7a;
+}
+
+.calendar-more {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.events-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 1rem 0;
+}

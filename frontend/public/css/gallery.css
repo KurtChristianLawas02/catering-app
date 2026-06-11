@@ -145,8 +145,8 @@
 }
 
 .dot.active {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--gold);
+  border-color: var(--gold);
   transform: scale(1.2);
 }
 

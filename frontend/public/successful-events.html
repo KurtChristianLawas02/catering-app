@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Successful Events — Ratskie Food and Catering Services</title>
+  <link rel="icon" type="image/png" href="/images/ratskie-logo.png" />
+  <link rel="apple-touch-icon" href="/images/ratskie-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .success-page {
+      min-height: 100vh;
+      padding: 9rem 4rem 5rem;
+      background: #f9f6f0;
+    }
+
+    .success-head {
+      max-width: 860px;
+      margin-bottom: 3rem;
+    }
+
+    .success-head p {
+      max-width: 620px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 1rem;
+    }
+
+    .success-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .success-post {
+      background: #fff;
+      border: 1px solid #e8e2d8;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(44, 44, 44, 0.06);
+    }
+
+    .success-photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.6rem;
+      padding: 0.6rem;
+      background: #f2ebe0;
+    }
+
+    .success-photos img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .success-body {
+      padding: 1.6rem;
+    }
+
+    .success-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .success-body p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .success-empty {
+      padding: 3rem;
+      background: #fff;
+      border: 1px solid #e8e2d8;
+      color: var(--muted);
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .success-page { padding: 7rem 1.5rem 4rem; }
+      .success-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .success-photos { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a class="logo" href="/">Ratskie Food and Catering Services <span>✦</span></a>
+    <ul id="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#packages">Packages</a></li>
+      <li><a href="/#events">Events</a></li>
+      <li><a href="/successful-events.html">Successful Events</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/booking.html" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="success-page">
+    <header class="success-head">
+      <div class="section-label">Memories We Catered</div>
+      <h1 class="section-title">Successful Events</h1>
+      <p>Browse celebrations completed by Ratskie Food and Catering Services, with photos and captions curated by the admin team.</p>
+    </header>
+
+    <section class="success-grid" id="successfulEventsGrid">
+      <div class="success-empty">Loading successful events...</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"> TATAK Ratskie<span>✦</span></div>
+    <a href="/about.html">About Us</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="tel:+639752985748">+63 9752985748</a>
+      <a href="/admin">Admin</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    function esc(str) {
+      return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    async function loadSuccessfulEvents() {
+      const grid = document.getElementById('successfulEventsGrid');
+
+      try {
+        const res = await fetch('/api/successful-events');
+        const json = await res.json();
+        const posts = json.data || [];
+
+        if (!posts.length) {
+          grid.innerHTML = '<div class="success-empty">No successful events posted yet.</div>';
+          return;
+        }
+
+        grid.innerHTML = posts.map(post => `
+          <article class="success-post">
+            <div class="success-photos">
+              ${post.photos.map(photo => `<img src="/uploads/successful-events/${esc(photo.filename)}" alt="${esc(post.title)}">`).join('')}
+            </div>
+            <div class="success-body">
+              <h2>${esc(post.title)}</h2>
+              <p>${esc(post.caption)}</p>
+            </div>
+          </article>
+        `).join('');
+      } catch {
+        grid.innerHTML = '<div class="success-empty">Unable to load successful events right now.</div>';
+      }
+    }
+
+    loadSuccessfulEvents();
+  </script>
+</body>
+</html>

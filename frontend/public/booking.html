@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Event - Ratskie Food and Catering Services</title>
+  <link rel="icon" type="image/png" href="/images/ratskie-logo.png" />
+  <link rel="apple-touch-icon" href="/images/ratskie-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <a class="logo" href="/">Ratskie Food and Catering Services <span>*</span></a>
+    <ul id="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#packages">Packages</a></li>
+      <li><a href="/#events">Events</a></li>
+      <li><a href="/successful-events.html">Successful Events</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/booking.html" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main>
+    <section id="booking" class="booking-page">
+      <div class="section-label">Get Started</div>
+      <h1 class="section-title">Inquire &amp; Book a Service</h1>
+
+      <div class="booking-wrap">
+        <div class="booking-info">
+          <h3>Let's Plan Your Perfect Event</h3>
+          <p>Fill out the form and our team will get back to you within 24 hours to confirm your booking and discuss details.</p>
+          <div class="booking-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Submit Inquiry</strong>Fill in your event details and preferences.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>Consultation Call</strong>Our team will reach out to finalize details.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Confirmation</strong>Receive your booking confirmation and contract.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text"><strong>Enjoy Your Event</strong>Sit back and let us handle everything.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="bookingForm" novalidate>
+            <div class="form-section-title">Personal Details</div>
+            <div class="form-grid">
+              <div class="form-group" id="grp-customer_name">
+                <label>Full Name <span class="req">*</span></label>
+                <input type="text" name="customer_name" placeholder="Juan dela Cruz">
+                <span class="err-msg">Please enter your full name.</span>
+              </div>
+              <div class="form-group" id="grp-customer_phone">
+                <label>Contact Number <span class="req">*</span></label>
+                <input type="tel" name="customer_phone" placeholder="09XX XXX XXXX">
+                <span class="err-msg">Please enter a valid phone number.</span>
+              </div>
+              <div class="form-group span2" id="grp-customer_email">
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="customer_email" placeholder="juan@email.com">
+                <span class="err-msg">Please enter a valid email address.</span>
+              </div>
+              <div class="form-group span2" id="grp-customer_address">
+                <label>Complete Address <span class="req">*</span></label>
+                <input type="text" name="customer_address" placeholder="House No., Street, Barangay, City, Province">
+                <span class="err-msg">Please enter your complete address.</span>
+              </div>
+            </div>
+
+            <div class="form-sep"></div>
+
+            <div class="form-section-title">Event Details</div>
+            <div class="form-grid">
+              <div class="form-group" id="grp-event_type">
+                <label>Event Type <span class="req">*</span></label>
+                <select name="event_type">
+                  <option value="">Select event type...</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="debut">Debut / 18th Birthday</option>
+                  <option value="reunion">Family Reunion</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="err-msg">Please select an event type.</span>
+              </div>
+              <div class="form-group" id="grp-guest_count">
+                <label>Estimated Guest Count <span class="req">*</span></label>
+                <input type="number" name="guest_count" placeholder="e.g. 100" min="1">
+                <span class="err-msg">Please enter the guest count.</span>
+              </div>
+              <div class="form-group" id="grp-event_date">
+                <label>Event Date <span class="req">*</span></label>
+                <input type="date" name="event_date">
+                <span class="err-msg">Please select a valid future date.</span>
+              </div>
+              <div class="form-group" id="grp-event_time">
+                <label>Event Time <span class="req">*</span></label>
+                <input type="time" name="event_time">
+                <span class="err-msg">Please select a time.</span>
+              </div>
+              <div class="form-group span2" id="grp-event_venue">
+                <label>Venue / Location <span class="req">*</span></label>
+                <input type="text" name="event_venue" placeholder="Venue name and address">
+                <span class="err-msg">Please enter the event venue.</span>
+              </div>
+            </div>
+
+            <div class="form-sep"></div>
+
+            <div class="form-section-title">Food Package</div>
+            <div class="form-grid">
+              <div class="form-group span2" id="grp-food_package">
+                <label>Select Package <span class="req">*</span></label>
+                <select name="food_package">
+                  <option value="">Choose a food package...</option>
+                  <option value="silver">Silver - 158K (150 Pax Catering)</option>
+                  <option value="gold">Gold - 290K (250 Pax Catering)</option>
+                  <option value="aluminum">Aluminum - 120K (120 Pax Catering)</option>
+                  <option value="customize">Customize Event</option>
+                </select>
+                <span class="err-msg">Please select a food package.</span>
+              </div>
+              <div class="form-group span2 customize-panel" id="customizePanel" hidden>
+                <label>Customize Event</label>
+                <div class="customize-help">You can select more than one option. Choose all foods, designs, and services you want included for your budget.</div>
+                <div class="customize-count" id="customizeCount">0 options selected</div>
+                <div class="customize-options">
+                  <details class="customize-category">
+                    <summary>Foods</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: No Food"><span>No Food</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Humba"><span>Pork Humba</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Menudo"><span>Pork Menudo</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Afritada"><span>Pork Afritada</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Sweet & Sour Pork"><span>Sweet & Sour Pork</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Estofado"><span>Pork Estofado</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Adobo"><span>Pork Adobo</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Rib Caldereta"><span>Pork Rib Caldereta</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Braised Pork Ribs"><span>Braised Pork Ribs</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork with Broccoli"><span>Pork with Broccoli</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Honey Glazed Chicken"><span>Honey Glazed Chicken</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Buffalo Wings"><span>Buffalo Wings</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fried/Buttered Chicken"><span>Fried/Buttered Chicken</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chicken Curry"><span>Chicken Curry</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chicken Menudo"><span>Chicken Menudo</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chicken with Broccoli"><span>Chicken with Broccoli</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chicken Estofado"><span>Chicken Estofado</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chicken with Oyster Sauce"><span>Chicken with Oyster Sauce</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Sweet & Sour Fish"><span>Sweet & Sour Fish</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fish Fillet with Sauce"><span>Fish Fillet with Sauce</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Garlic Buttered Fish"><span>Garlic Buttered Fish</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Escabeche"><span>Escabeche</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Shrimp with Butter Sauce"><span>Shrimp with Butter Sauce</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fish Bistek"><span>Fish Bistek</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Beef Caldereta"><span>Beef Caldereta</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Beef Steak"><span>Beef Steak</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Beef Estofado"><span>Beef Estofado</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Beef with Onions"><span>Beef with Onions</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Beef with Broccoli"><span>Beef with Broccoli</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Lumpia Shanghai"><span>Lumpia Shanghai</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Special Bam-i"><span>Special Bam-i</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pancit Guisado"><span>Pancit Guisado</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pork Embutido"><span>Pork Embutido</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Chop Suey"><span>Chop Suey</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Pinakbet"><span>Pinakbet</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fruit Salad"><span>Fruit Salad</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Buko Pandan"><span>Buko Pandan</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fresh Fruits with Crema"><span>Fresh Fruits with Crema</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Fresh Fruits Tray"><span>Fresh Fruits Tray</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Venue Decorations</summary>
+                     <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: Buffet Table, Chaffing Dishes and Complete Utensils"><span>Buffet Table, Chaffing Dishes and Complete Utensils</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: 2 Sets of Buffet Table, Chaffing Dishes and Complete Utensils"><span>2 Sets of Buffet Table, Chaffing Dishes and Complete Utensils</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: 2 Layered Cake, All Can Be Eaten"><span>2 Layered Cake, All Can Be Eaten</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: 3 Layered Cake, All Can Be Eaten"><span>3 Layered Cake, All Can Be Eaten</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Foods: 1 Bottle of Sparkling Wine"><span>1 Bottle of Sparkling Wine</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Tables with Center Pieces"><span>Tables with Center Pieces</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: 100 Chairs (Monoblock) with Cover"><span>100 Chairs (Monoblock) with Cover</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: 130 Chairs (Monoblock) with Cover"><span>130 Chairs (Monoblock) with Cover</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: 230 Chairs (Monoblock) with Cover"><span>230 Chairs (Monoblock) with Cover</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Couple's Backdrop, 20 x 20 Ceiling Works"><span>Couple's Backdrop, 20 x 20 Ceiling Works</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Couple's Backdrop, 40 x 40 Ceiling Works"><span>Couple's Backdrop, 40 x 40 Ceiling Works</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Elegant Chandeliers, Decorations with Elegant Set Up"><span>Elegant Chandeliers, Decorations with Elegant Set Up</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: 20pcs Elegant Chandeliers"><span>20pcs Elegant Chandeliers</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Presidential Table Set Up, Couple's Table, Guests Table Set Up"><span>Presidential Table Set Up, Couple's Table, Guests Table Set Up</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Cake Table Set Up, Elegant Entrance Decor"><span>Cake Table Set Up, Elegant Entrance Decor</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Venue Decorations: Red Carpet, Bridal Car"><span>Red Carpet, Bridal Car</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Bouquets and Boutonniers</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Bouquets and Boutonniers: Bridal Bouquet, Groom's Boutonniere"><span>Bridal Bouquet, Groom's Boutonniere</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Bouquets and Boutonniers: Entourage Bouquets, Entourage & Parents Principal Sponsors Boutonniers"><span>Entourage Bouquets, Entourage & Parents Principal Sponsors Boutonniers</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Bouquets and Boutonniers: Secondary Sponsors Boutonniers"><span>Secondary Sponsors Boutonniers</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Church Decorations</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Church Decorations: 10 Church Aisles Standee with Fresh Flowers"><span>10 Church Aisles Standee with Fresh Flowers</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Church Decorations: Red Carpet"><span>Red Carpet</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Church Decorations:  Bridal Car"><span>Bridal Car</span></label>
+
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Emcee and DJ</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Emcee and DJ: Professional DJ"><span>Professional DJ</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Emcee and DJ: Professional Emcee"><span>Professional Emcee</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Photography</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: Professional Photographer"><span>Professional Photographer</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: Prenup Video and Photos"><span>Prenup Video and Photos</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: Photo and Video (SDE)"><span>Photo and Video (SDE)</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: Unlimited Shoots from Preparation Area to Church Until Reception"><span>Unlimited Shoots from Preparation Area to Church Until Reception</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: Photobooth - On the Day Photos for the Guest"><span>Photobooth - On the Day Photos for the Guest</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Photography: 4R Hard Copies, 3 Hour Service of Shoot"><span>4R Hard Copies, 3 Hour Service of Shoot</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Coordination</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Coordination: 1 Official Coordinator and 1 Assistant Coordinator"><span>1 Official Coordinator and 1 Assistant Coordinator</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Coordination: No Coordination"><span>No Coordination</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Wedding Attires & Makeup</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Wedding Apparels: Bride and Groom Attires, Best Man and Maid of Honor Attires"><span>Bride and Groom Attires, Best Man and Maid of Honor Attires</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Wedding Apparels: Brides Maids, Grooms Men, Flower Girls, Bearers, Parents Attires"><span>Brides Maids, Grooms Men, Flower Girls, Bearers, Parents Attires</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Wedding Apparels: Bridal Robes, Mannequin, Cord, Veil, Ring and Coin Pillows"><span>Bridal Robes, Mannequin, Cord, Veil, Ring and Coin Pillows</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Make Up Artist: 8-10 Heads Hair and Make Up"><span>8-10 Heads Hair and Make Up</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Make Up Artist: Flower Girls Make Up with Hair Dresser"><span>Flower Girls Make Up with Hair Dresser</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Sound System, Lights & LED</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: Basic Sound System"><span>Basic Sound System</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 4 Moving Heads"><span>4 Moving Heads</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 6 Moving Heads"><span>6 Moving Heads</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 2 Powered Speakers, 2 Sub Speakers"><span>2 Powered Speakers, 2 Sub Speakers</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 2 Wireless Microphones, 16 Par LED and Mode Lights"><span>2 Wireless Microphones, 16 Par LED and Mode Lights</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 2 Wireless Microphones, 20 Par LED and Mode Lights"><span>2 Wireless Microphones, 20 Par LED and Mode Lights</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: Smoke Machine"><span>Smoke Machine</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: LED Wall"><span>LED Wall</span></label>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Technical Equipment: 2 Units Iwata Big Fans, 1 Set of Lighted Dance Floor"><span>2 Units Iwata Big Fans, 1 Set of Lighted Dance Floor</span></label>
+                  </details>
+
+                  <details class="customize-category">
+                    <summary>Other Package Inclusions</summary>
+                    <label class="customize-option"><input type="checkbox" name="custom_package_options" value="Other: 30 Pcs Customized Invitation Letters with Photocopies for Approval"><span>30 Pcs Customized Invitation Letters with Photocopies for Approval</span></label>
+                  </details>
+                </div>
+              </div>
+              <div class="form-group span2 package-inclusions-panel" id="packageInclusionsPanel" hidden>
+                <label id="packageInclusionsTitle">Package Inclusions</label>
+                <div class="customize-help">These inclusions are already part of the selected package. You can edit, uncheck, remove, or add inclusions before submitting.</div>
+                <div class="package-inclusions-head">
+                  <div class="customize-count" id="packageInclusionsCount">0 inclusions selected</div>
+                  <button class="inclusion-add-btn" type="button" id="addPackageInclusionBtn">Add Inclusion</button>
+                </div>
+                <div class="package-inclusions-list" id="packageInclusionsList"></div>
+              </div>
+              <div class="form-group span2">
+                <label>Additional Food Notes / Customize Requests</label>
+                <textarea name="food_package_details" placeholder="Any dietary restrictions, preferred dishes, budget range, or custom service requests..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-sep"></div>
+
+            <div class="form-section-title">Decoration &amp; Flowers</div>
+            <div class="form-grid">
+              <div class="form-group" id="grp-decoration_theme">
+                <label>Decoration Theme <span class="req">*</span></label>
+                <select name="decoration_theme">
+                  <option value="">Choose a theme...</option>
+                  <option value="elegant">Elegant - Timeless luxury, gold and ivory</option>
+                  <option value="rustic">Rustic - Warm wood, greenery and earth tones</option>
+                  <option value="modern">Modern - Clean lines, monochrome, geometric</option>
+                  <option value="garden">Garden - Lush florals, pastel, al fresco</option>
+                  <option value="tropical">Tropical - Vibrant, palms, bright colors</option>
+                  <option value="vintage">Vintage - Lace, antique, romantic pastels</option>
+                  <option value="minimalist">Minimalist - Simple, white space, zen</option>
+                </select>
+                <span class="err-msg">Please select a decoration theme.</span>
+              </div>
+              <div class="form-group" id="grp-flower_arrangement">
+                <label>Flower Arrangement <span class="req">*</span></label>
+                <select name="flower_arrangement">
+                  <option value="">Choose flowers...</option>
+                  <option value="classic_roses">Classic Roses - Red, white, or blush</option>
+                  <option value="tropical_mix">Tropical Mix - Anthurium, bird of paradise</option>
+                  <option value="wildflower">Wildflower - Sunflowers, daisies, lavender</option>
+                  <option value="orchid_luxury">Orchid Luxury - Premium orchid installations</option>
+                  <option value="sunflower_garden">Sunflower Garden - Warm and cheerful</option>
+                  <option value="peony_romance">Peony Romance - Soft, romantic, lush</option>
+                  <option value="none">No floral arrangement needed</option>
+                </select>
+                <span class="err-msg">Please select a flower arrangement.</span>
+              </div>
+            </div>
+
+            <div class="form-sep"></div>
+
+            <div class="form-section-title">Additional Information</div>
+            <div class="form-grid full">
+              <div class="form-group">
+                <label>Special Requests or Notes</label>
+                <textarea name="special_requests" placeholder="Anything else you'd like us to know..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Event Inspiration Image (optional, max 5MB)</label>
+                <label class="file-label" for="inspiration_image">
+                  <span id="file-label-text">Click to upload an image (JPG, PNG, GIF, WEBP)</span>
+                  <input type="file" id="inspiration_image" name="inspiration_image" accept="image/*">
+                </label>
+                <div class="file-name" id="file-name-display"></div>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-submit" id="submitBtn">
+                Submit Inquiry
+              </button>
+            </div>
+
+            <div class="form-message" id="formMessage"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"> TATAK Ratskie<span>*</span></div>
+    <a href="/about.html">About Us</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="tel:+639752985748">+63 9752985748</a>
+      <a href="/admin">Admin</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
