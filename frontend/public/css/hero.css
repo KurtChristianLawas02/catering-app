@@ -111,7 +111,7 @@
 
 #hero h1 em {
   font-style: italic;
-  color: var(--earth);
+  color: rgba(245, 244, 241, 0.85);
 }
 
 #hero p {
