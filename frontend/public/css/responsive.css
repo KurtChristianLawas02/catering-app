@@ -22,7 +22,7 @@
 
   .booking-wrap {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .booking-info {
@@ -31,7 +31,7 @@
 
   .form-card {
     order: 0;
-    padding: 2rem;
+    padding: 1.8rem;
   }
 }
 
@@ -60,6 +60,18 @@
 
   nav ul.open .nav-book {
     display: block;
+  }
+
+  .booking-page {
+    padding-top: 7rem;
+  }
+
+  #booking {
+    padding: 5.5rem 1.5rem 4rem;
+  }
+
+  .booking-page-intro {
+    font-size: 0.95rem;
   }
 
   .form-grid {

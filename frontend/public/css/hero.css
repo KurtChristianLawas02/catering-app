@@ -47,6 +47,7 @@
   position: relative;
   z-index: 2;
   max-width: 780px;
+  will-change: opacity, transform;
 }
 
 .hero-deco {
@@ -61,6 +62,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-ctas a {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.hero-ctas a:hover {
+  transform: translateY(-3px) scale(1.02);
 }
 
 .hero-logo {

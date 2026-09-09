@@ -545,9 +545,46 @@ async function loadApprovedEvents() {
   }
 }
 
+function setupRevealAnimations() {
+  const revealSelectors = [
+    '#hero',
+    'section',
+    '.service-card',
+    '.pkg-card',
+    '.blog-card',
+    '.booking-intro-card',
+    '.booking-steps',
+    '.hero-slide-btn',
+    '.hero-ctas a',
+    '.btn-primary',
+    '.btn-outline',
+    'footer',
+  ].join(', ');
+
+  const revealElements = Array.from(document.querySelectorAll(revealSelectors));
+  if (!revealElements.length) return;
+
+  revealElements.forEach((el) => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   showHeroSlide(heroSlideIndex);
   resetHeroSlideshowTimer();
+  setupRevealAnimations();
 
   const prevMonth = document.getElementById('prevMonth');
   const nextMonth = document.getElementById('nextMonth');

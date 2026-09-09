@@ -9,6 +9,9 @@
   letter-spacing: 0.2em;
   color: var(--gold);
   margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
 .section-title {
@@ -16,6 +19,21 @@
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300;
   line-height: 1.2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Common buttons */
