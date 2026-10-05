@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/typography.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/services.css" />
   <link rel="stylesheet" href="css/packages.css" />
   <link rel="stylesheet" href="css/booking.css" />
@@ -28,7 +29,10 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="logo" href="#">RATSKIE FOOD AND CATERING SERVICES</a>
+  <a class="logo brand-lockup" href="/" aria-label="Ratskie Food and Catering Services home">
+    <img class="brand-mark" src="/images/ratskie-logo.png" alt="" />
+    <span class="brand-copy"><strong>RATSKIE</strong><small>FOOD &amp; CATERING</small></span>
+  </a>
   <ul id="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#packages">Packages</a></li>
@@ -88,28 +92,113 @@
   </div>
 </section>
 
+<!-- EVENT PHOTO COLLAGE -->
+<section id="gallery" class="event-collage" aria-labelledby="collage-title">
+  <div class="collage-heading">
+    <div>
+      <div class="section-label">A Taste of the Moments</div>
+      <h2 class="section-title" id="collage-title">Celebrations, Beautifully Served</h2>
+    </div>
+    <a class="collage-link" href="/successful-events.html">Explore our events <span aria-hidden="true">&#8599;</span></a>
+  </div>
+  <div class="collage-grid" aria-label="A clickable photo collage of Ratskie catered events">
+    <figure class="collage-tile tile-one">
+      <button class="collage-photo" type="button" aria-label="Open elegant green reception styling photo">
+        <img src="/uploads/successful-events/1779029789953-573096868.jpg" alt="Elegant green reception styling with lights and floral decorations" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-two">
+      <button class="collage-photo" type="button" aria-label="Open colorful reception lights photo">
+        <img src="/uploads/successful-events/1779029789957-782695528.jpg" alt="Colorful reception styling with dramatic lights and ceiling drapes" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-three">
+      <button class="collage-photo" type="button" aria-label="Open wedding reception photo">
+        <img src="/images/weddimg1.jpg" alt="Wedding reception styling with table settings" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-four">
+      <button class="collage-photo" type="button" aria-label="Open elegant table setup photo">
+        <img src="/images/table.jpg" alt="Elegant catered table setup with warm details" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-five">
+      <button class="collage-photo" type="button" aria-label="Open wedding celebration photo">
+        <img src="/images/wedding.jpg" alt="Wedding celebration styled by Ratskie" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-six">
+      <button class="collage-photo" type="button" aria-label="Open anniversary event photo">
+        <img src="/images/anniversary.jpg" alt="Anniversary event dining setup" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-seven">
+      <button class="collage-photo" type="button" aria-label="Open birthday event photo">
+        <img src="/images/birthday.jpg" alt="Birthday event styling and catering" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-eight">
+      <button class="collage-photo" type="button" aria-label="Open wedding table details photo">
+        <img src="/images/wedding.jpg" alt="Wedding table styling and floral details" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-nine">
+      <button class="collage-photo" type="button" aria-label="Open reception decor photo">
+        <img src="/images/weddimg1.jpg" alt="Reception decor arranged by Ratskie" />
+      </button>
+    </figure>
+    <figure class="collage-tile tile-ten">
+      <button class="collage-photo" type="button" aria-label="Open buffet and table styling photo">
+        <img src="/images/table.jpg" alt="Buffet and table styling for a celebration" />
+      </button>
+    </figure>
+  </div>
+  <div class="photo-lightbox" id="photoLightbox" hidden>
+    <button class="lightbox-backdrop" type="button" aria-label="Close photo preview"></button>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Photo preview">
+      <button class="lightbox-close" type="button" aria-label="Close photo preview">&times;</button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services">
-  <div class="section-label">What We Offer</div>
-  <h2 class="section-title">Crafted with Passion,<br>Served with Elegance</h2>
+  <div class="section-heading services-heading">
+    <div>
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Crafted with Passion,<br>Served with Elegance</h2>
+    </div>
+    <p>Every celebration is handled like a signature event, from the first menu idea to the last beautiful table detail.</p>
+  </div>
+  <div class="services-showcase">
+    <div class="services-showcase-copy">
+      <span class="showcase-label">Ratskie Signature Care</span>
+      <h3>Food, styling, and coordination working beautifully together.</h3>
+      <p>We pair generous Filipino hospitality with polished event execution, so your guests feel welcomed the moment they arrive.</p>
+    </div>
+    <div class="services-showcase-image">
+      <img src="/images/table.jpg" alt="Elegant catered table setting with warm event styling" />
+    </div>
+  </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon"></div>
+      <div class="service-icon">01</div>
       <h3>Culinary Excellence</h3>
       <p>From international cuisine to local specialties, our chefs create menus that delight every palate.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon"></div>
+      <div class="service-icon">02</div>
       <h3>Floral Arrangements</h3>
       <p>Bespoke floral designs that complement your event theme, from classic roses to tropical blooms.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon"></div>
+      <div class="service-icon">03</div>
       <h3>Event Decoration</h3>
       <p>Transform any venue with our curated decoration themes — elegant, rustic, modern, and more.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon"></div>
+      <div class="service-icon">04</div>
       <h3>Full Event Planning</h3>
       <p>End-to-end event coordination, letting you enjoy your special day without the stress.</p>
     </div>
@@ -118,12 +207,26 @@
 
 <!-- PACKAGES -->
 <section id="packages">
-  <div class="section-label">Our Offerings</div>
-  <h2 class="section-title">Choose Your Package</h2>
+  <div class="section-heading packages-heading">
+    <div>
+      <div class="section-label">Our Offerings</div>
+      <h2 class="section-title">Choose Your Package</h2>
+    </div>
+    <p>Clear inclusions, refined styling, and flexible support for celebrations that deserve to feel effortless.</p>
+  </div>
   <div class="packages-grid">
-    <div class="pkg-card">
+    <div class="pkg-card package-silver">
+      <div class="pkg-media">
+        <img src="/images/packages/silver-wedding-package.jpg" alt="Silver wedding package poster for 158K" onerror="this.onerror=null;this.src='/images/wedding.jpg';" />
+      </div>
+      <div class="pkg-topline">Elegant Wedding Package</div>
       <h3>Silver</h3>
       <div class="pkg-price">158K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <div class="pkg-highlights">
+        <span>150 Pax</span>
+        <span>Full Styling</span>
+        <span>Photo Coverage</span>
+      </div>
       <ul class="pkg-features pkg-expandable" id="pkg-silver">
         <li><strong>Catering Service:</strong> 150 Pax Catering Service</li>
         <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
@@ -165,11 +268,21 @@
         <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
       <button class="pkg-toggle" onclick="togglePackage('pkg-silver')">See More</button>
+      <a class="pkg-book" href="/booking.html">Book Silver</a>
     </div>
-    <div class="pkg-card">
+    <div class="pkg-card package-gold">
       <div class="pkg-badge">Popular</div>
+      <div class="pkg-media">
+        <img src="/images/packages/gold-wedding-package.jpg" alt="Gold wedding package poster for 290K" onerror="this.onerror=null;this.src='/images/weddimg1.jpg';" />
+      </div>
+      <div class="pkg-topline">Premier Wedding Experience</div>
       <h3>Gold</h3>
       <div class="pkg-price">290K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <div class="pkg-highlights">
+        <span>250 Pax</span>
+        <span>LED Wall</span>
+        <span>Photobooth</span>
+      </div>
       <ul class="pkg-features pkg-expandable" id="pkg-gold">
         <li><strong>Catering Service:</strong> 250 Pax Catering Service</li>
         <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
@@ -214,10 +327,20 @@
         <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
       <button class="pkg-toggle" onclick="togglePackage('pkg-gold')">See More</button>
+      <a class="pkg-book" href="/booking.html">Book Gold</a>
     </div>
-    <div class="pkg-card">
+    <div class="pkg-card package-aluminum">
+      <div class="pkg-media">
+        <img src="/images/packages/aluminum-wedding-package.jpg" alt="Aluminum wedding package poster for 120K" onerror="this.onerror=null;this.src='/images/anniversary.jpg';" />
+      </div>
+      <div class="pkg-topline">Beautiful Essential Package</div>
       <h3>Aluminum</h3>
       <div class="pkg-price">120K · Presidential Table Good for 20-25 Pax with Elegant Set Up</div>
+      <div class="pkg-highlights">
+        <span>120 Pax</span>
+        <span>Sound System</span>
+        <span>Coordinator</span>
+      </div>
       <ul class="pkg-features pkg-expandable" id="pkg-aluminum">
         <li><strong>Catering Service:</strong> 120 Pax Catering Service</li>
         <li>4 Main Dishes, Rice, 1 Round Soft Drinks, 1 Dessert</li>
@@ -258,31 +381,46 @@
         <li class="hidden-item"><strong>No Hidden Charges · Official Receipt and Contract Included</strong></li>
       </ul>
       <button class="pkg-toggle" onclick="togglePackage('pkg-aluminum')">See More</button>
+      <a class="pkg-book" href="/booking.html">Book Aluminum</a>
     </div>
   </div>
 </section>
 <!-- BLOG -->
 <section id="blog">
-  <div class="section-label">Latest Stories</div>
-  <h2 class="section-title">From Our Company</h2>
+  <div class="section-heading blog-heading">
+    <div>
+      <div class="section-label">Latest Stories</div>
+      <h2 class="section-title">From Our Company</h2>
+    </div>
+    <p>Go behind the scenes of the care, taste, and teamwork that shape every Ratskie celebration.</p>
+  </div>
   <div class="blog-grid">
     <article class="blog-card">
+      <img src="/images/table.jpg" alt="Ratskie catered table details" />
+      <div class="blog-content">
       <span class="blog-tag">About the Company</span>
       <h3>Trusted Catering Since Day One</h3>
       <p>Ratskie started with a simple promise: deliver memorable events through thoughtful food, elegant styling, and personal service. Our team combines years of experience with a commitment to every client’s unique story.</p>
       <a href="/about.html">Read more about us</a>
+      </div>
     </article>
     <article class="blog-card">
+      <img src="/images/birthday.jpg" alt="Birthday celebration arranged by Ratskie" />
+      <div class="blog-content">
       <span class="blog-tag">Our Values</span>
       <h3>Why Every Celebration Matters</h3>
       <p>We believe celebrations are more than food and decor. They are moments of connection, joy, and family. That is why we tailor every menu, setup, and support service to make your event truly unforgettable.</p>
       <a href="/about.html">Learn about our approach</a>
+      </div>
     </article>
     <article class="blog-card">
+      <img src="/images/wedding.jpg" alt="Wedding event prepared by Ratskie team" />
+      <div class="blog-content">
       <span class="blog-tag">Meet the Team</span>
       <h3>The People Behind Your Event</h3>
       <p>Our chefs, planners, and service staff work together to bring reliability and professionalism to every booking. From tasting to execution, our crew ensures every detail is handled with care.</p>
       <a href="/about.html">Discover our team</a>
+      </div>
     </article>
   </div>
 </section>
@@ -296,7 +434,10 @@
 </section>
 <!-- FOOTER -->
 <footer>
-  <div class="logo"> TATAK Ratskie<span>✦</span></div>
+  <a class="logo brand-lockup" href="/" aria-label="Ratskie Food and Catering Services home">
+    <img class="brand-mark" src="/images/ratskie-logo.png" alt="" />
+    <span class="brand-copy"><strong>RATSKIE</strong><small>FOOD &amp; CATERING</small></span>
+  </a>
   <a href="/about.html">About Us</a>
   <div style="display:flex;gap:1.5rem">
     <a href="tel:+6391234567890">📞 +63 9752985748</a>

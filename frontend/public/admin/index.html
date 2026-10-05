@@ -32,10 +32,14 @@
     }
     .login-brand { text-align: center; position: relative; z-index: 1; }
     .login-brand .logo {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 600; color: var(--cream);
+      font-size: 3rem; font-weight: 600; color: var(--cream); text-decoration: none;
     }
-    .login-brand .logo span { color: var(--gold); }
+    .login-brand .brand-mark { width: 54px; height: 54px; }
+    .login-brand .brand-copy { text-align: left; }
+    .login-brand .brand-copy strong { font-size: 3rem; }
+    .login-brand .brand-copy small { font-family: 'Jost', sans-serif; font-size: 0.62rem; letter-spacing: 0.14em; }
     .login-brand p { margin-top: 1rem; color: rgba(250,247,242,0.5); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .login-brand .deco { font-size: 4rem; margin-bottom: 1rem; }
 
@@ -85,9 +89,11 @@
 <body>
   <div class="login-left">
     <div class="login-brand">
-      <div class="deco">✦</div>
-      <div class="logo">Ratskie<span>✦</span></div>
-      <p>Food and Catering Services</p>
+      <a class="logo brand-lockup" href="/" aria-label="Ratskie Food and Catering Services home">
+        <img class="brand-mark" src="/images/ratskie-logo.png" alt="" />
+        <span class="brand-copy"><strong>RATSKIE</strong><small>FOOD &amp; CATERING</small></span>
+      </a>
+      <p>Secure event management</p>
     </div>
   </div>
   <div class="login-right">

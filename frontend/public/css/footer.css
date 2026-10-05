@@ -23,6 +23,27 @@ footer .logo span {
   color: var(--gold);
 }
 
+footer .brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+footer .brand-mark {
+  width: 34px;
+  height: 34px;
+}
+
+footer .brand-copy strong {
+  font-size: 1.2rem;
+}
+
+footer .brand-copy small {
+  color: rgba(250, 247, 242, 0.55);
+}
+
 footer p {
   font-size: 0.8rem;
 }
