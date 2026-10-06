@@ -61,13 +61,18 @@ function validateForm(data) {
     'decoration_theme',
     'flower_arrangement',
   ];
+  const missing = [];
 
   // Check required fields
   required.forEach((f) => {
     const val = data.get(f);
     const empty = !val || !val.trim();
     showError(f, empty);
-    if (empty) valid = false;
+    if (empty) {
+      valid = false;
+      const label = document.querySelector(`#grp-${f} label`);
+      missing.push(label ? label.textContent.replace(/\*/g, '').trim() : f);
+    }
   });
 
   // Email validation
@@ -82,6 +87,15 @@ function validateForm(data) {
   if (dateVal && new Date(dateVal) < new Date(new Date().toDateString())) {
     showError('event_date', true);
     valid = false;
+  }
+
+  if (!valid) {
+    const message = missing.length
+      ? `Please complete the following required fields:\n\n${missing.join('\n')}`
+      : 'Please correct the highlighted fields before submitting.';
+    window.alert(message);
+    const firstError = document.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+    if (firstError) firstError.focus();
   }
 
   return valid;
@@ -229,6 +243,15 @@ if (bookingForm) {
   const packageInclusionsList = document.getElementById('packageInclusionsList');
   const addPackageInclusionBtn = document.getElementById('addPackageInclusionBtn');
 
+  const requestedPackage = new URLSearchParams(window.location.search).get('package');
+  if (
+    packageSelect &&
+    requestedPackage &&
+    Array.from(packageSelect.options).some((option) => option.value === requestedPackage)
+  ) {
+    packageSelect.value = requestedPackage;
+  }
+
   function escapeAttribute(value) {
     return String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
   }
@@ -338,6 +361,7 @@ if (bookingForm) {
       msg.textContent = 'Please choose at least one customize option for your booking.';
       msg.className = 'form-message error show';
       msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      window.alert('Please choose at least one customize option for your booking.');
       return;
     }
     const existingNotes = String(formData.get('food_package_details') || '').trim();
@@ -354,6 +378,7 @@ if (bookingForm) {
       msg.textContent = 'Please keep at least one package inclusion or add a new one.';
       msg.className = 'form-message error show';
       msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      window.alert('Please keep at least one package inclusion or add a new one.');
       return;
     }
     const existingNotes = String(formData.get('food_package_details') || '').trim();
