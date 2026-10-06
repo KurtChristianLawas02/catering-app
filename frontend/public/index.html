@@ -153,13 +153,6 @@
       </button>
     </figure>
   </div>
-  <div class="photo-lightbox" id="photoLightbox" hidden>
-    <button class="lightbox-backdrop" type="button" aria-label="Close photo preview"></button>
-    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Photo preview">
-      <button class="lightbox-close" type="button" aria-label="Close photo preview">&times;</button>
-      <img id="lightboxImage" src="" alt="" />
-    </div>
-  </div>
 </section>
 
 <!-- SERVICES -->
@@ -217,7 +210,9 @@
   <div class="packages-grid">
     <div class="pkg-card package-silver">
       <div class="pkg-media">
-        <img src="images/silver.jpg" alt="Silver wedding package poster for 158K" onerror="this.onerror=null;this.src='/images/wedding.jpg';" />
+        <button class="package-photo-preview" type="button" aria-label="View Silver wedding package photo">
+          <img src="images/silver.jpg" alt="Silver wedding package poster for 158K" onerror="this.onerror=null;this.src='/images/wedding.jpg';" />
+        </button>
       </div>
       <div class="pkg-topline">Elegant Wedding Package</div>
       <h3>Silver</h3>
@@ -273,7 +268,9 @@
     <div class="pkg-card package-gold">
       <div class="pkg-badge">Popular</div>
       <div class="pkg-media">
-        <img src="/images/gold.jpg" alt="Gold wedding package poster for 290K" onerror="this.onerror=null;this.src='/images/weddimg1.jpg';" />
+        <button class="package-photo-preview" type="button" aria-label="View Gold wedding package photo">
+          <img src="/images/gold.jpg" alt="Gold wedding package poster for 290K" onerror="this.onerror=null;this.src='/images/weddimg1.jpg';" />
+        </button>
       </div>
       <div class="pkg-topline">Premier Wedding Experience</div>
       <h3>Gold</h3>
@@ -331,7 +328,9 @@
     </div>
     <div class="pkg-card package-aluminum">
       <div class="pkg-media">
-        <img src="/images/aluminum.jpg" alt="Aluminum wedding package poster for 120K" onerror="this.onerror=null;this.src='/images/anniversary.jpg';" />
+        <button class="package-photo-preview" type="button" aria-label="View Aluminum wedding package photo">
+          <img src="/images/aluminum.jpg" alt="Aluminum wedding package poster for 120K" onerror="this.onerror=null;this.src='/images/anniversary.jpg';" />
+        </button>
       </div>
       <div class="pkg-topline">Beautiful Essential Package</div>
       <h3>Aluminum</h3>
@@ -444,6 +443,14 @@
     <a href="/admin">Admin</a>
   </div>
 </footer>
+
+<div class="photo-lightbox" id="photoLightbox" hidden>
+  <button class="lightbox-backdrop" type="button" aria-label="Close photo preview"></button>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button class="lightbox-close" type="button" aria-label="Close photo preview">&times;</button>
+    <img id="lightboxImage" src="" alt="" />
+  </div>
+</div>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

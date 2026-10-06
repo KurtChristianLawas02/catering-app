@@ -610,7 +610,7 @@ function setupPhotoLightbox() {
   const lightbox = document.getElementById('photoLightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   const closeButtons = document.querySelectorAll('.lightbox-close, .lightbox-backdrop');
-  const photoButtons = document.querySelectorAll('.collage-photo');
+  const photoButtons = document.querySelectorAll('.collage-photo, .package-photo-preview');
   if (!lightbox || !lightboxImage || !photoButtons.length) return;
 
   let activeTrigger = null;
